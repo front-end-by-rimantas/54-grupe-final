@@ -13,6 +13,7 @@
     "author": "Rimantas (https://github.com/belauzas)",
     "license": "MIT",
     "dependencies": {
+        "54-grupe-final": "file:..",
         "dotenv": "^16.5.0",
         "express": "^5.1.0"
     }
