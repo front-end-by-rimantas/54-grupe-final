@@ -1,7 +1,22 @@
+import { useState } from "react";
 import { CategoriesList } from "./CategoriesList";
+import { useEffect } from "react";
 
 export function FeaturedCategories() {
-    const data = [];
+    const [data, setData] = useState([]);
+
+    useEffect(() => {
+        fetch('http://localhost:5417/api/categories/featured', {
+            method: 'GET',
+        })
+            .then(res => res.json())
+            .then(data => {
+                if (data.status === 'success') {
+                    setData(() => data.data);
+                }
+            })
+            .catch(console.error);
+    })
 
     return (
         <div className="container px-4 py-5" id="featured-3">
