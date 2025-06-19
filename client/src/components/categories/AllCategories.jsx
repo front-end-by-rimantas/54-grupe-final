@@ -16,7 +16,7 @@ export function AllCategories() {
                 }
             })
             .catch(console.error);
-    })
+    }, []);
 
     return (
         <div className="container px-4 py-5" id="featured-3">
