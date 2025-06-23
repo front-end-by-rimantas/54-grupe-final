@@ -14,7 +14,7 @@ export function PageMovies() {
             .then(res => res.json())
             .then(data => {
                 if (data.status === 'success') {
-                    setData(() => data.data);
+                    setData(() => data.list);
                 }
             })
             .catch(console.error);
