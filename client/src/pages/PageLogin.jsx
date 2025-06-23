@@ -1,10 +1,11 @@
-import { Placeholder } from "../components/placeholder/placeholder";
+import { LoginForm } from "../components/form/LoginForm";
+import { PageTitle } from "../components/page-title/PageTitle";
 
 export function PageLogin() {
     return (
-        <>
-            <Placeholder text="Title" />
-            <Placeholder text="Form" />
-        </>
+        <div className="container">
+            <PageTitle title="Login" />
+            <LoginForm />
+        </div>
     )
 }
