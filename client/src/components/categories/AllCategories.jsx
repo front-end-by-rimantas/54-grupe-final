@@ -19,8 +19,12 @@ export function AllCategories() {
     }, []);
 
     return (
-        <div className="container px-4 py-5" id="featured-3">
-            <h2 className="pb-2 border-bottom">All categories</h2>
+        <div className="container">
+            <div class="row">
+                <div class="col-12">
+                    <h1 class="display-1">All categories</h1>
+                </div>
+            </div>
             <CategoriesList data={data} />
         </div>
     );

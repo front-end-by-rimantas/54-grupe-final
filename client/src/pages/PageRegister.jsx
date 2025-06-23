@@ -1,7 +1,10 @@
+import { Placeholder } from "../components/placeholder/placeholder";
+
 export function PageRegister() {
     return (
         <>
-            REGISTER PAGE CONTENT
+            <Placeholder text="Title" />
+            <Placeholder text="Form" />
         </>
     )
 }

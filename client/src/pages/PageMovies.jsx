@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { MovieList } from "../components/movies/MovieList";
 import { useEffect } from "react";
+import { Placeholder } from "../components/placeholder/placeholder";
 
 export function PageMovies() {
     const [data, setData] = useState([]);
@@ -21,7 +22,8 @@ export function PageMovies() {
 
     return (
         <>
-            {/* FILTER */}
+            <Placeholder text="Page title" />
+            <Placeholder text="Filter" />
             <MovieList data={data} />
         </>
     )
