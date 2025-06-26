@@ -19,6 +19,9 @@ export function Header() {
                     <Link to='/register' className="btn btn-primary me-2">Register</Link>
                     <Link to='/login' className="btn btn-outline-primary">Login</Link>
                 </div>
+                <div className="col-md-3 text-end">
+                    <Link to='/dashboard' className="btn btn-primary me-2">Dashboard</Link>
+                </div>
             </header>
         </div>
     );
