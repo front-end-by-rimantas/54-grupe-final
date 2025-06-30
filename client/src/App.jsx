@@ -17,6 +17,11 @@ import { PageLogin } from './pages/public/auth/PageLogin';
 import { PageRegister } from './pages/public/auth/PageRegister';
 
 import { PageDashboard } from './pages/admin/PageDashboard';
+import { PageAllCategories } from './pages/admin/categories/PageAllCategories';
+import { PageEditCategory } from './pages/admin/categories/PageEditCategory';
+import { PagePublishedCategories } from './pages/admin/categories/PagePublishedCategories';
+import { PageDraftCategories } from './pages/admin/categories/PageDraftCategories';
+import { PageNewCategory } from './pages/admin/categories/PageNewCategory';
 
 export function App() {
   return (
@@ -34,12 +39,12 @@ export function App() {
           </Route>
           <Route Component={PrivateLayout}>
             <Route path='/admin' element={<PageDashboard />} />
-            <Route path='/admin/categories' element={<PageDashboard />} />
-            <Route path='/admin/categories/new' element={<PageDashboard />} />
-            <Route path='/admin/categories/published' element={<PageDashboard />} />
-            <Route path='/admin/categories/draft' element={<PageDashboard />} />
+            <Route path='/admin/categories' element={<PageAllCategories />} />
+            <Route path='/admin/categories/new' element={<PageNewCategory />} />
+            <Route path='/admin/categories/published' element={<PagePublishedCategories />} />
+            <Route path='/admin/categories/draft' element={<PageDraftCategories />} />
             <Route path='/admin/categories/:category' element={<PageDashboard />} />
-            <Route path='/admin/categories/:category/edit' element={<PageDashboard />} />
+            <Route path='/admin/categories/:category/edit' element={<PageEditCategory />} />
             <Route path='/admin/movies' element={<PageDashboard />} />
             <Route path='/admin/movies/new' element={<PageDashboard />} />
             <Route path='/admin/movies/published' element={<PageDashboard />} />
