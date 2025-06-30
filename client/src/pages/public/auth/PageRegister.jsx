@@ -1,7 +1,7 @@
 import { useContext } from "react";
 import { RegisterForm } from "../../../components/form/RegisterForm";
 import { PageTitle } from "../../../components/page-title/PageTitle";
-import { UserContext } from "../../../context/UserContext";
+import { UserContext } from "../../../context/user/UserContext";
 
 export function PageRegister() {
     const { isLoggedIn, logout } = useContext(UserContext);

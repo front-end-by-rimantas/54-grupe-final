@@ -1,7 +1,7 @@
 import { useContext } from "react";
 import { LoginForm } from "../../../components/form/LoginForm";
 import { PageTitle } from "../../../components/page-title/PageTitle";
-import { UserContext } from "../../../context/UserContext";
+import { UserContext } from "../../../context/user/UserContext";
 
 export function PageLogin() {
     const { isLoggedIn, logout } = useContext(UserContext);

@@ -1,6 +1,6 @@
 import { useContext, useState } from "react";
 import { useNavigate } from "react-router";
-import { UserContext } from "../../context/UserContext";
+import { UserContext } from "../../context/user/UserContext";
 
 export function LoginForm() {
     const [email, setEmail] = useState('chuck@norris.lt');
@@ -43,7 +43,7 @@ export function LoginForm() {
 
                     login(data.user);
 
-                    navigate('/dashboard');
+                    navigate('/admin');
                 } else {
                     if (typeof data.msg === 'string') {
                         setAlertText(data.msg);

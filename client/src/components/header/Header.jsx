@@ -3,7 +3,7 @@ import { MenuLink } from "./MenuLink";
 import { mainMenuData } from "../../data/mainMenuData";
 import heroImg from '../../assets/movies-hero.png';
 import { useContext } from "react";
-import { UserContext } from "../../context/UserContext";
+import { UserContext } from "../../context/user/UserContext";
 
 export function Header({ isPublicPage }) {
     const { isLoggedIn, logout } = useContext(UserContext);
