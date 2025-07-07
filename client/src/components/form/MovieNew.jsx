@@ -8,7 +8,7 @@ export function MovieNewForm() {
     const navigate = useNavigate();
     const { movie } = useParams();
     const { adminCategories } = useContext(CategoriesContext);
-    const { adminMovies } = useContext(MoviesContext);
+    const { adminMovies, adminRefreshMovies } = useContext(MoviesContext);
 
     const [img, setImg] = useState('');
     const [name, setName] = useState('');
@@ -87,7 +87,7 @@ export function MovieNewForm() {
             .then(res => res.json())
             .then(data => {
                 if (data.status === 'success') {
-                    // adminRefreshMovies();
+                    adminRefreshMovies();
                     navigate('/admin/movies');
                 }
             })
