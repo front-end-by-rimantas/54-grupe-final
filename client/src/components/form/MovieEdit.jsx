@@ -94,7 +94,7 @@ export function MovieEditForm() {
                         </div>
                     </div>
                     <img id="image" className="col-12 movie-thumbnail" src={img ? img : defaultImg} alt="" />
-                    <p>{img}</p>
+                    <p>Image url: {img}</p>
                 </div>
             </form>
 

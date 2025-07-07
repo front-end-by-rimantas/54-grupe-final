@@ -9,6 +9,8 @@ import { categoriesGet } from '../api/admin/categoriesGet.js';
 import { categoriesPost } from '../api/admin/categoriesPost.js';
 import { categoriesDelete } from '../api/admin/categoriesDelete.js';
 import { categoriesPut } from '../api/admin/categoriesPut.js';
+import { apiUpload } from '../api/admin/apiUpload.js';
+import { uploadMovieThumbnailImage } from '../middleware/uploadThumbnail.js';
 
 export const adminApiRouter = express.Router();
 
@@ -26,6 +28,8 @@ adminApiRouter.get('/categories', categoriesGet);
 adminApiRouter.post('/categories', categoriesPost);
 adminApiRouter.put('/categories/:id', categoriesPut);
 adminApiRouter.delete('/categories/:id', categoriesDelete);
+
+adminApiRouter.post('/upload', uploadMovieThumbnailImage.single('thumbnail'), apiUpload);
 
 adminApiRouter.all('*error', (req, res) => {
     return res.status(404).json({

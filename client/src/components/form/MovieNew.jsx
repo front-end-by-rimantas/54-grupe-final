@@ -37,6 +37,24 @@ export function MovieNewForm() {
         setStatus('draft');
     }
 
+    function handleImageChange(e) {
+        const formData = new FormData();
+        formData.append('thumbnail', e.target.files[0]);
+
+        fetch('http://localhost:5417/api/admin/upload', {
+            method: 'POST',
+            credentials: 'include',
+            body: formData,
+        })
+            .then(res => res.json())
+            .then(data => {
+                if (data.status === 'success') {
+                    setImg(data.msg);
+                }
+            })
+            .catch(console.error);
+    }
+
     function handleMainFormSubmit(e) {
         e.preventDefault();
 
@@ -82,12 +100,13 @@ export function MovieNewForm() {
                 <div className="row g-3">
                     <div className="col-12">
                         <label htmlFor="thumbnail" className="form-label">Thumbnail</label>
-                        <input className="form-control" id="thumbnail" name="thumbnail" type="file" required />
+                        <input onChange={handleImageChange} className="form-control" id="thumbnail" name="thumbnail" type="file" required />
                         <div className="invalid-feedback">
                             Valid image is required.
                         </div>
                     </div>
-                    <img id="image" className="col-12" style={{ maxHeight: '20rem', objectFit: 'contain' }} src={img ? img : defaultImg} alt="" />
+                    <img id="image" className="col-12 movie-thumbnail" src={img ? img : defaultImg} alt="" />
+                    <p>Image url: {img}</p>
                 </div>
             </form>
 
